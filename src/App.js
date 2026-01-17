@@ -17,7 +17,7 @@ function App() {
     const parsed = JSON.parse(saved);
     return parsed.length > 0 ? parsed[0].id : 1;
   });
-  const [currentModel, setCurrentModel] = useState(() => localStorage.getItem('julu_model') || "gemini-1.5-flash");
+  const [currentModel, setCurrentModel] = useState(() => localStorage.getItem('julu_model') || "gemini-2.5-flash-preview");
   const [systemRules, setSystemRules] = useState(() => localStorage.getItem('julu_rules') || "You are Julu. If asked for diagrams, generate Mermaid JS code wrapped in ```mermaid ``` blocks.");
   
   // VOICE SETTINGS
@@ -76,9 +76,9 @@ function App() {
   const currentChat = chats.find(c => c.id === activeChatId) || chats[0];
   
   const availableModels = [
-    { id: "gemini-1.5-flash", name: "Gemini 1.5 Flash (Standard)" },
-    { id: "gemini-2.0-flash", name: "Gemini 2.0 Flash (New)" },
-    { id: "gemini-3-flash-preview", name: "Gemini 3 Preview (Exp)" } 
+     { id: "gemini-2.5-flash", name: "Flash 2.5" },
+    { id: "gemini-3-flash-preview", name: "Flash 3" } 
+
   ];
 
   const availableLanguages = [
